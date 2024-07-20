@@ -1,0 +1,147 @@
+body {
+    font-family: 'Lucida Calligraphy', 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://th.bing.com/th/id/OIP.dkjbr5AKBkR2gxSOSLghBAHaEo?rs=1&pid=ImgDetMain');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffd700; /* Changed to gold color */
+}
+
+h1 {
+    text-align: center;
+    color: #ffd700; /* Changed to gold color */
+    font-family: 'Lucida Calligraphy', 'Arial', sans-serif;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #ffd700; /* Changed to gold color */
+    color: #000000; /* Changed to black for contrast */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #ffec8b; /* Lighter gold on hover */
+}
+
+.category-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-item {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.category-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #ffd700; /* Changed to gold color */
+}
+
+.category-item p {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    color: #ffd700; /* Changed to gold color */
+    font-family: 'Lucida Calligraphy', 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+#imageCaption {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #ffd700; /* Changed to gold color */
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #ffd700; /* Changed to gold color */
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffec8b; /* Lighter gold on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.download-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ffd700; /* Changed to gold color */
+    color: #000000; /* Changed to black for contrast */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #ffec8b; /* Lighter gold on hover */
+}
