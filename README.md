@@ -15,7 +15,7 @@ This project is an AI-generated Wallpaper Gallery website that showcases a diver
 ## Technologies Used
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- JavaScript
 
 ## Project Structure
 Main Page:
