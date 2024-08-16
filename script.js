@@ -12,26 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(image => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
-
+        const basePath = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1';
+        
         const link = document.createElement('a');
         if (image.category === 'anime') {
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Anime/Category.html';
+            link.href = '${basePath}/Anime/Category.html'; // Update this link according to your system's path.
         } else if (image.category === 'ai'){
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/AI/Category.html';
+            link.href = '${basePath}/AI/Category.html'; // Update this link according to your system's path.
         } else if (image.category === 'daily') {
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Daily Mix/Category.html';
+            link.href = '${basePath}/Daily Mix/Category.html'; // Update this link according to your system's path.
         } else if (image.category === 'dogs') {
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Dogs/Category.html';
+            link.href = '${basePath}/Dogs/Category.html'; // Update this link according to your system's path.
         } else if (image.category === 'cars') {
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Cars/Category.html';
+            link.href = '${basePath}/Cars/Category.html'; // Update this link according to your system's path.
         } else if (image.category === 'nature') {
-            link.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Nature/Category.html';
+            link.href = '${basePath}/Nature/Category.html'; // Update this link according to your system's path.
         } else {    
             link.href = '#'; 
         }
 
         const img = document.createElement('img');
-        img.src = `D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/${image.src}`;
+        img.src = `D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/${image.src}`; // Update this link according to your system's path.
         img.alt = image.description;
         img.loading = 'lazy';
 
