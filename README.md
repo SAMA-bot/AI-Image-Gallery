@@ -7,7 +7,7 @@ This project is an AI-generated Wallpaper Gallery website that showcases a diver
 - Responsive image gallery with lazy loading
 - Category-based navigation
 - User feedback submission form
-- Animated title with color cycling effect
+- Animated title with colour cycling effect
 - Mobile-responsive design
 - Modal image view with download capability
 - Back-to-main-gallery navigation
