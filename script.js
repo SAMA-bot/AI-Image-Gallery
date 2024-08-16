@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(image => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
-        const basePath = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1';
+        const basePath = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1'; // Update link according to your system's path
         
         const link = document.createElement('a');
         if (image.category === 'anime') {
