@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.getElementById('gallery');
     const images = [
-        { src: 'https://drive.google.com/drive/u/0/folders/1gVqKtCVFPFVVdT-8kxwibxq3DeH_7NrB', description: 'Anime AI Wallpapers', category: 'anime' },
+        { src: 'Image 1.jpg', description: 'Anime AI Wallpapers', category: 'anime' },
         { src: 'Image 2.jpg', description: 'AI Wallpapers', category: 'ai' },
         { src: 'Image 3.jpg', description: 'Daily Mix', category: 'daily' },
         { src: 'Image 4.jpg', description: '#Dogs', category: 'dogs' },
