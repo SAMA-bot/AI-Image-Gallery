@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
     const gallery = document.getElementById('category-gallery');
     const categoryTitle = document.getElementById('category-title');
     const modal = document.getElementById('imageModal');
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item.className = 'category-item';
 
         const img = document.createElement('img');
-        img.src = `D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Anime/${image.src}`;
+        img.src = `../Anime/${image.src}`;
         img.alt = image.description;
         img.loading = 'lazy';
 
@@ -47,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
             modalImg.src = this.src;
             captionText.innerHTML = this.alt;
             
-            // Update download button
-            downloadBtn.href = this.src;
-            downloadBtn.download = this.alt + '.jpg';
+            // Update download button attributes
+            downloadBtn.setAttribute('href', this.src);
+            downloadBtn.setAttribute('download', this.alt + '.jpg');
         }
 
         const p = document.createElement('p');
@@ -60,15 +61,18 @@ document.addEventListener('DOMContentLoaded', function() {
         gallery.appendChild(item);
     });
 
-    // Close the modal when the x is clicked
-    closeBtn.onclick = function() {
+    // Close the modal
+    function closeModal() {
         modal.style.display = "none";
     }
 
+    // Close the modal when the close button is clicked
+    closeBtn.onclick = closeModal;
+
     // Close the modal when clicking outside the image
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
         }
     }
 
@@ -82,6 +86,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle back to main gallery button click
     backBtn.onclick = function() {
-        window.location.href = 'D:/Desktop/Notebooks/Work/Web Development/My Project/Code Alpha Project 1/Index.html';
+        window.location.href = '../index.html';
     }
+
+    // Handle download button click
+    downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Fetch the image and trigger download
+        fetch(this.href)
+            .then(resp => resp.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = this.getAttribute('download');
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(() => alert('An error occurred while downloading the image.'));
+    });
 });
