@@ -10,22 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // AI images data
     const aiImages = [
-        { src: 'AI 1.jpg', description: 'AI Generated Image 1' },
-        { src: 'AI 2.jpg', description: 'AI Generated Image 2' },
-        { src: 'AI 3.jpg', description: 'AI Generated Image 3' },
-        { src: 'AI 4.jpg', description: 'AI Generated Image 4' },
-        { src: 'AI 5.jpg', description: 'AI Generated Image 5' },
-        { src: 'AI 6.jpg', description: 'AI Generated Image 6' },
-        { src: 'AI 7.jpg', description: 'AI Generated Image 7' },
-        { src: 'AI 8.jpg', description: 'AI Generated Image 8' },
-        { src: 'AI 9.jpg', description: 'AI Generated Image 9' },
-        { src: 'AI 10.jpg', description: 'AI Generated Image 10' },
-        { src: 'AI 11.jpg', description: 'AI Generated Image 11' },
-        { src: 'AI 12.jpg', description: 'AI Generated Image 12' },
-        { src: 'AI 13.jpg', description: 'AI Generated Image 13' },
-        { src: 'AI 14.jpg', description: 'AI Generated Image 14' },
-        { src: 'AI 15.jpg', description: 'AI Generated Image 15' },
-        { src: 'AI 16.jpg', description: 'AI Generated Image 16' }
+        { src: 'https://i.ibb.co/9q6B1Z5/AI-1.jpg', description: 'AI Generated Image 1' },
+        { src: 'https://i.ibb.co/8NWc5CX/AI-2.jpg', description: 'AI Generated Image 2' },
+        { src: 'https://i.ibb.co/pPzRwss/AI-3.jpg', description: 'AI Generated Image 3' },
+        { src: 'https://i.ibb.co/Js9d9X9/AI-4.jpg', description: 'AI Generated Image 4' },
+        { src: 'https://i.ibb.co/JHF9gPd/AI-5.jpg', description: 'AI Generated Image 5' },
+        { src: 'https://i.ibb.co/BGpnqTp/AI-6.jpg', description: 'AI Generated Image 6' },
+        { src: 'https://i.ibb.co/4S5s2sf/AI-7.jpg', description: 'AI Generated Image 7' },
+        { src: 'https://i.ibb.co/RgnzHBP/AI-8.jpg', description: 'AI Generated Image 8' },
+        { src: 'https://i.ibb.co/nfCSnHq/AI-9.jpg', description: 'AI Generated Image 9' },
+        { src: 'https://i.ibb.co/x2JX6VK/AI-10.jpg', description: 'AI Generated Image 10' },
+        { src: 'https://i.ibb.co/SfP21F4/AI-11.jpg', description: 'AI Generated Image 11' },
+        { src: 'https://i.ibb.co/7j5h5Hb/AI-12.jpg', description: 'AI Generated Image 12' },
+        { src: 'https://i.ibb.co/w0DRXRt/AI-13.jpg', description: 'AI Generated Image 13' },
+        { src: 'https://i.ibb.co/qnNqw3f/AI-14.jpg', description: 'AI Generated Image 14' },
+        { src: 'https://i.ibb.co/Htzk3Qz/AI-15.jpg', description: 'AI Generated Image 15' },
+        { src: 'https://i.ibb.co/5WHVtHC/AI-16.jpg', description: 'AI Generated Image 16' }
     ];
 
     // Set the category title
@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item.className = 'category-item';
 
         const img = document.createElement('img');
-        // Update this path to match your actual file structure
-        img.src = `../AI/${image.src}`;
+        img.src = image.src;
         img.alt = image.description;
         img.loading = 'lazy';
 
