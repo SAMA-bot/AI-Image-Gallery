@@ -1,13 +1,16 @@
 body {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: italic;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-image: url('https://www.europarl.europa.eu/resources/library/images/20230607PHT95601/20230607PHT95601-cl.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: #00aaff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -15,11 +18,11 @@ h1 {
     color: #00aaff;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .back-btn {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
@@ -29,11 +32,13 @@ h1 {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 100;
 }
 
 .back-btn:hover {
     background-color: #0088cc;
+    transform: translateY(-2px);
 }
 
 .category-gallery {
@@ -42,7 +47,7 @@ h1 {
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 60px;
 }
 
 .category-item {
@@ -51,6 +56,7 @@ h1 {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .category-item:hover {
@@ -64,6 +70,11 @@ h1 {
     object-fit: cover;
     display: block;
     border-bottom: 2px solid #00aaff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-item:hover img {
+    transform: scale(1.1);
 }
 
 .category-item p {
@@ -72,6 +83,17 @@ h1 {
     text-align: center;
     color: #00aaff;
     font-weight: bold;
+    background-color: rgba(42, 42, 42, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.category-item:hover p {
+    opacity: 1;
 }
 
 .modal {
@@ -138,9 +160,103 @@ h1 {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .download-btn:hover {
     background-color: #0088cc;
+    transform: translateY(-2px);
+}
+
+.add-image-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #00aaff;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.add-image-btn:hover {
+    background-color: #0088cc;
+    transform: scale(1.1);
+}
+
+.add-image-form {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: rgba(42, 42, 42, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 99;
+}
+
+.add-image-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #00aaff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #00aaff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-image-form input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.add-image-form button {
+    padding: 10px 15px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-image-form button:hover {
+    background-color: #0088cc;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .add-image-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .add-image-form {
+        bottom: 80px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
 }
